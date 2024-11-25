@@ -8,8 +8,52 @@
 </head>
 <body>
     <div class="container">
-        <h1>Angelika przepraszam za rajtuzy naprawdę żałuję i pragnę naprawić mój błąd</h1>
-        <p>Odblokuj mnie &#9829</p>
+        <div id="countdown">00d 00h 00m 00s</div>
+        <script>
+            // Ustaw docelową datę i godzinę
+const targetDate = new Date("2024-11-29T22:00:00"); // Przykładowa data
+
+function updateCountdown() {
+    const now = new Date();
+    const timeLeft = targetDate - now;
+
+    if (timeLeft <= 0) {
+        document.getElementById("countdown").textContent = "Czas upłynął!";
+        clearInterval(timerInterval); // Zatrzymanie timera
+        return;
+    }
+
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").textContent =
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+
+
+const timerInterval = setInterval(updateCountdown, 1000);
+updateCountdown(); // Wywołanie natychmiastowe, żeby odliczanie było widoczne od razu
+
+        </script>
+    </div>
+
+    <div id="footer">
+        Podoba się kolor?<br>
+        <button onclick="myFunction()">?</button>
+
+    <script>
+        function myFunction() {
+            const userInput = prompt("Magiczne słowo");
+            if (userInput == "mhm" || userInput == "Mhm" || userInput == "MHM") {
+                window.open("location.html");
+            } else {
+                alert("Błedne Hasło")
+            }
+        }
+    </script>
+   
     </div>
     
     
