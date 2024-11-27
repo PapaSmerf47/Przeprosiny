@@ -11,7 +11,7 @@
         <div id="countdown">00d 00h 00m 00s</div>
         <script>
             // Ustaw docelową datę i godzinę
-const targetDate = new Date("2024-11-29T22:00:00"); // Przykładowa data
+const targetDate = new Date("2024-11-29T21:00:00"); // Przykładowa data
 
 function updateCountdown() {
     const now = new Date();
@@ -19,8 +19,11 @@ function updateCountdown() {
 
     if (timeLeft <= 0) {
         document.getElementById("countdown").textContent = "Czas upłynął!";
+        window.open("koniec.html", "_self");
         clearInterval(timerInterval); // Zatrzymanie timera
         return;
+            
+        
     }
 
     const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
@@ -37,35 +40,6 @@ const timerInterval = setInterval(updateCountdown, 1000);
 updateCountdown(); // Wywołanie natychmiastowe, żeby odliczanie było widoczne od razu
 
         </script>
-    </div>
-
-    <div id="footer">
-        Podoba się kolor?<br>
-        <button onclick="myFunction()">?</button><br>
-        <button onclick="myFunction1()">Update 2.3</button>
-
-    <script>
-        function myFunction() {
-            const userInput = prompt("Magiczne słowo");
-            if (userInput == "mhm" || userInput == "Mhm" || userInput == "MHM") {
-                window.open("location.html");
-            } else {
-                alert("Błedne Hasło")
-            }
-        }
-
-        function myFunction1() {
-            const userInput = prompt("Ładne ale przez rzęsy nie widać");
-            if (userInput == "oczy" || userInput == "oczka" || userInput == "Oczy" || userInput == "Oczka") {
-                window.open("robert.html");
-            } else {
-                alert("Błedne Hasło")
-            }
-        }
-    </script>
-   
-    </div>
-    
-    
+    </div>    
 </body>
 </html>
